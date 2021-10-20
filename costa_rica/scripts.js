@@ -33,8 +33,8 @@ $(document).ready(function() {
         ['Índice de Desarrollo Social al 2017', 'ids2017', 'normal'],
         ['Índice de Desarrollo Humano al 2011', 'idh2011', 'indicadores_exclusivo_cantones'],
         ['Índice de Desarrollo Humano al 2018', 'idh2018', 'indicadores_exclusivo_cantones'],
-        ['Índice de Competencia Cantonal al 2011', 'icc2011', 'indicadores_exclusivo_cantones'],
-        ['Índice de Competencia Cantonal al 2018', 'icc2018', 'indicadores_exclusivo_cantones'],
+        ['Índice de Competitividad Cantonal al 2011', 'icc2011', 'indicadores_exclusivo_cantones'],
+        ['Índice de Competitividad Cantonal al 2018', 'icc2018', 'indicadores_exclusivo_cantones'],
         ['Índice de Socioeconómico Integrado del 2011 y 2013', 'isi2011_13', 'indicadores_exclusivo_cantones'],
         ['Índice de Socioeconómico Integrado del 2017 y 2018', 'isi2017_20', 'indicadores_exclusivo_cantones'],
     ];
