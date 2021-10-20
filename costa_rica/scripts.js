@@ -938,7 +938,7 @@ $(document).ready(function() {
         $("#div_escenario").show();
         if (x != 'Índice Combinado de Ruralidad') {
             $("#territorio_cantones").hide();
-            $(".indicadores_exclusivo_cantones").show();
+            $(".indicadores_exclusivo_cantones").css("display", "flex");
             $("#selector_territorial").show();
         } else {
             $("#selector_territorial").show();
@@ -974,12 +974,12 @@ $(document).ready(function() {
         cargar_capa(x);
         if (x == 'distritos') {
             capa_actual = 'geonode:distritos_fida_cr';
-            $(".indicadoes_exclusivo_cantones").hide();
+            $(".indicadores_exclusivo_cantones").hide();
             $("#titulo_escenario").html(titulo_escenario + '<br>por distrito');
             $("#panel_descarga").html('<span class="download_button" onclick="metodologia (\'' + titulo_escenario + '\')">Metodología del escenario</span><br><a href="./descargas/distritos_cr_nueva_ruralidad.zip"><span class="download_button">Descargar datos</span></a>')
         } else if (x == 'cantones') {
             capa_actual = 'geonode:cantones_fida_cr';
-            $(".indicadoes_exclusivo_cantones").show();
+            $(".indicadores_exclusivo_cantones").css("display", "flex");
             $("#titulo_escenario").html(titulo_escenario + '<br>por cantón');
             $("#panel_descarga").html('<span class="download_button" onclick="metodologia (\'' + titulo_escenario + '\')">Metodología del escenario</span><br><a href="./descargas/cantones_cr_nueva_ruralidad.zip"><span class="download_button">Descargar datos</span></a>')
         }
