@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Nueva Ruralidad</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://kit.fontawesome.com/91822fdb88.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css">
+    <link href="./styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="comparison-container">
+        <div id="before" class="map"></div>
+        <div id="after" class="map"></div>
+    </div>
+    <div id="leyenda_izquierda" class="row" style="display: block;"></div>
+    <div id="leyenda_derecha" class="row" style="display: block;"></div>
+    <div id="botonera_superior" class="row">
+        <div class="row" style="width: 100%;">
+            <div class="col-3">
+                <h3 class="es_pan" id="pais"><i class="fas fa-home" style="font-size: large;margin-right: 5px;cursor: pointer;" onclick="inicio()"></i> Panamá</h3>
+                <h3 class="en_pan" id="pais">Panama</h3>
+                <h3 class="es_slv" id="pais">El Salvador</h3>
+                <h3 class="en_slv" id="pais">El Salvador</h3>
+                <h3 class="es_cri" id="pais">Costa Rica</h3>
+                <h3 class="en_cri" id="pais">Costa Rica</h3>
+                <div class="es" id="boton_seleccion" onclick="listar_escenarios('cri')">Seleccione un escenario de ruralidad</div>
+                <div class="en" id="boton_seleccion" onclick="listar_escenarios('cri')">Select rurality scenarium</div>
+            </div>
+            <div class="col-9" id="selector_escenarios" style="display:none;">
+                <h5 class="es" id="escenarios_es">Escenarios de ruralidad</h5>
+                <h5 class="en" id="escenarios_en">Indicators</h5>
+                <div id="lista_escenarios"></div>
+            </div>
+            <div id="div_escenario" class="col-4">
+                <div class="col-12" style="margin: 0;text-align: center">
+                    <h5 id="titulo_escenario">Índice Combinado de Ruralidad <br>por distrito</h5>
+                </div>
+            </div>
+            <div id="div_descarga" class="col-2" style="align-self: center;">
+                <div class="col-12" id="panel_descarga" style="margin: 0;text-align: center">
+                    <span class="download_button" onclick="metodologia ('Índice Combinado de Ruralidad')">Metodología del escenario</span><br><a href="./descargas/distritos_pa_nueva_ruralidad.zip"><span class="download_button">Descargar datos</span></a>
+                </div>
+            </div>
+            <div class="col-3" id="selector_territorial">
+                <div id="territorio_cantones" class="tarjeta_territorial card" onclick="elegir_territorio('cantones')"><img src="./images/provincia.png">
+                    <br><span>Cantones</span></div>
+                <div id="territorio_distritos" class="tarjeta_territorial card territorio_seleccionado" onclick="elegir_territorio('distritos')"><img src="./images/distrito.png">
+                    <br><span>Distritos</span></div>
+            </div>
+        </div>
+    </div>
+    <div id="boton_capas_externas" onclick="panel_capas_externas()">
+        <i class="fas fa-layer-group"></i>
+    </div>
+    <div id="boton_indicadores" onclick="panel_indicadores()">
+        <i class="fas fa-users-cog"></i> Indicadores socioeconómicos
+    </div>
+    <div id="boton_tabla" onclick="abrir_tabla()">
+        <i class="fas fa-table"></i>
+    </div>
+    <div id="capas_externas">
+        <h6>Añadir capas</h6>
+    </div>
+    <div id="indicadores">
+        <h6>Seleccionar un indicador socioeconómico</h6>
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="metodologia">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body" id="metodologia_contenido">
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tabla">
+        <h5>Datos estadísticos</h5>
+        <table class="table">
+            <thead class="thead-dark">
+                <th>ID</th>
+                <th>Entidad</th>
+                <th>Valor</th>
+            </thead>
+            <tbody id="body_tabla">
+            </tbody>
+        </table>
+    </div>
+    <script src="./scripts.js"></script>
+</body>
+
+
+</html>

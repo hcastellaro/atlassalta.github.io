@@ -1,0 +1,298 @@
+       body {
+           margin: 0;
+           padding: 0;
+       }
+       
+       .es {
+           display: none;
+       }
+       
+       .en {
+           display: none;
+       }
+       
+       .es_pan {
+           display: none;
+       }
+       
+       .es_slv {
+           display: none;
+       }
+       
+       .es_cri {
+           display: none;
+       }
+       
+       .en_pan {
+           display: none;
+       }
+       
+       .en_slv {
+           display: none;
+       }
+       
+       .en_cri {
+           display: none;
+       }
+       
+       #map {
+           position: absolute;
+           top: 0;
+           bottom: 0;
+           width: 100%;
+       }
+       
+       .map {
+           position: absolute;
+           top: 0;
+           bottom: 0;
+           width: 100%;
+       }
+       
+       .mapboxgl-popup {
+           min-width: 440px;
+           font-size: x-small;
+       }
+       
+       #botonera_superior {
+           position: absolute;
+           top: 1%;
+           left: 2%;
+           right: 2%;
+           background-color: #00853e;
+           border-radius: 5px;
+           color: white;
+           z-index: 1;
+           padding: 10px;
+       }
+       
+       #leyenda_izquierda {
+           position: absolute;
+           top: 20%;
+           left: 2%;
+           background-color: white;
+           border-radius: 5px;
+           color: #00853e;
+           z-index: 1;
+           padding: 10px;
+       }
+       
+       #leyenda_derecha {
+           position: absolute;
+           top: 20%;
+           right: 2%;
+           background-color: white;
+           border-radius: 5px;
+           color: #00853e;
+           z-index: 1;
+           padding: 10px;
+       }
+       
+       #div_escenario {
+           padding: 10px;
+           display: block;
+       }
+       
+       #boton_seleccion {
+           position: relative;
+           left: 0px;
+           border-radius: 5px;
+           border-style: solid;
+           border-color: white;
+           border-width: 2px;
+           padding: 5px;
+           width: fit-content;
+       }
+       
+       #boton_seleccion:hover {
+           background-color: white;
+           color: #00853e;
+           cursor: pointer;
+           transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+       
+       #escenarios {
+           display: none;
+       }
+       
+       .fila-escenario:hover {
+           font-weight: bold;
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+           border-radius: 5px;
+           background-color: white;
+           color: #00853e;
+           cursor: pointer;
+           transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+       }
+       
+       #selector_territorial {
+           display: block;
+           text-align: right;
+           margin-left: auto;
+       }
+       
+       #selector_territorial_thiessen {
+           display: none;
+           text-align: right;
+       }
+       
+       .tarjeta_territorial {
+           display: inline-flex;
+           color: #00853e;
+           text-align: center;
+           font-weight: bold;
+           font-size: x-small;
+           border-radius: 0px;
+           cursor: pointer;
+           align-items: center;
+       }
+       
+       .tarjeta_territorial img {
+           width: 50px;
+       }
+       
+       .territorio_seleccionado {
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+           transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+       }
+       
+       .territorio_seleccionado img {
+           width: 55px;
+       }
+       
+       #leyenda {
+           position: absolute;
+           top: 20%;
+           right: 1%;
+           width: 15%;
+           background-color: white;
+           border-radius: 5px;
+           color: #00853e;
+           padding: 10px;
+           display: none;
+       }
+       
+       #boton_capas_externas {
+           background-color: #715b64;
+           position: absolute;
+           bottom: 3%;
+           left: 1%;
+           width: 40px;
+           line-height: 40px;
+           border-radius: 5px;
+           color: white;
+           text-align: center;
+           cursor: pointer;
+       }
+       
+       #boton_indicadores {
+           background-color: #715b64;
+           position: absolute;
+           bottom: 3%;
+           left: 5%;
+           line-height: 40px;
+           border-radius: 5px;
+           color: white;
+           text-align: center;
+           padding-left: 10px;
+           padding-right: 10px;
+           cursor: pointer;
+       }
+       
+       #boton_tabla {
+           background-color: #715b64;
+           position: absolute;
+           bottom: 3%;
+           left: 5%;
+           width: 40px;
+           line-height: 40px;
+           border-radius: 5px;
+           color: white;
+           text-align: center;
+           display: none;
+       }
+       
+       #capas_externas {
+           background-color: #715b64;
+           position: absolute;
+           bottom: 15%;
+           left: 1%;
+           top: 60%;
+           border-radius: 5px;
+           color: white;
+           display: none;
+           padding: 10px;
+       }
+       
+       #indicadores {
+           background-color: #715b64;
+           position: absolute;
+           top: 20%;
+           left: 1%;
+           z-index: 2;
+           width: 25%;
+           border-radius: 5px;
+           color: white;
+           display: none;
+           line-height: 1;
+           padding: 10px;
+       }
+       
+       #tabla {
+           background-color: #715b64;
+           position: absolute;
+           bottom: 15%;
+           left: 1%;
+           width: 30%;
+           border-radius: 5px;
+           color: white;
+           display: none;
+           padding: 10px;
+           height: 50vh;
+           overflow-y: scroll;
+           font-size: small;
+       }
+       
+       #body_tabla {
+           color: white;
+       }
+       
+       .fila-capa:hover {
+           font-weight: bold;
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+           border-radius: 5px;
+           background-color: white;
+           color: #715b64;
+           cursor: pointer;
+           transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+       }
+       
+       .download_button {
+           background-color: white;
+           color: green;
+           font-size: small;
+           padding: 3px;
+           margin-top: 13px;
+           border-radius: 5px;
+           cursor: pointer;
+           line-height: 3;
+       }
+       
+       .download_button:hover {
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+       /* #metodologia {
+            top: 20vh;
+            left: 25vw;
+            right: 25vw;
+            position: absolute;
+            z-index: 3;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+        } */
+       
+       .indicadores_exclusivo_cantones {
+           display: none;
+       }
